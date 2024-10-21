@@ -7,15 +7,15 @@ def parse_nfm_args():
     parser.add_argument('--seed', type=int, default=2019,
                         help='Random seed.')
 
-    parser.add_argument('--model_type', nargs='?', default='fm',
+    parser.add_argument('--model_type', nargs='?', default='nfm',
                         help='Specify a model type from {fm, nfm}.')
 
     parser.add_argument('--data_name', nargs='?', default='train-running-data',
                         help='Choose a dataset from {yelp2018, last-fm, amazon-book}')
-    parser.add_argument('--data_dir', nargs='?', default='D:\UIT\Nam3\MangXaHoi\Demo\CS313-CourseRecommendation-Code-master\CourseRecommendation-Code\KGAT-pytorch\data-mooc-for-test-final',
+    parser.add_argument('--data_dir', nargs='?', default='',
                         help='Input data path.')
     
-    parser.add_argument('--use_user_info', type=int, default=1,
+    parser.add_argument('--use_user_info', type=int, default=0,
                         help='0: No user info, 1: Use user info')
 
     parser.add_argument('--use_pretrain', type=int, default=0,
