@@ -35,7 +35,7 @@ class DataLoaderNFM(DataLoaderBase):
             
             for col in user_cols:
                 feat_rows += list(range(self.n_users))
-                feat_cols += (users_info[col] + self.n_user_attr).to_list()
+                feat_cols += (pd.to_numeric(users_info[col]) + self.n_user_attr).to_list()
                 feat_data += [1] * users_info.shape[0]
                 self.n_user_attr += max(users_info[col]) + 1
 

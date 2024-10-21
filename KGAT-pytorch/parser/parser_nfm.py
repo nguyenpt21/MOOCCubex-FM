@@ -7,18 +7,18 @@ def parse_nfm_args():
     parser.add_argument('--seed', type=int, default=2019,
                         help='Random seed.')
 
-    parser.add_argument('--model_type', nargs='?', default='nfm',
+    parser.add_argument('--model_type', nargs='?', default='fm',
                         help='Specify a model type from {fm, nfm}.')
 
-    parser.add_argument('--data_name', nargs='?', default='amazon-book',
+    parser.add_argument('--data_name', nargs='?', default='train-running-data',
                         help='Choose a dataset from {yelp2018, last-fm, amazon-book}')
-    parser.add_argument('--data_dir', nargs='?', default='datasets/',
+    parser.add_argument('--data_dir', nargs='?', default='D:\UIT\Nam3\MangXaHoi\Demo\CS313-CourseRecommendation-Code-master\CourseRecommendation-Code\KGAT-pytorch\data-mooc-for-test-final',
                         help='Input data path.')
     
-    parser.add_argument('--use_user_info', type=int, default=0,
+    parser.add_argument('--use_user_info', type=int, default=1,
                         help='0: No user info, 1: Use user info')
 
-    parser.add_argument('--use_pretrain', type=int, default=1,
+    parser.add_argument('--use_pretrain', type=int, default=0,
                         help='0: No pretrain, 1: Pretrain with the learned embeddings, 2: Pretrain with stored model.')
     parser.add_argument('--pretrain_embedding_dir', nargs='?', default='datasets/pretrain/',
                         help='Path of learned embeddings.')
