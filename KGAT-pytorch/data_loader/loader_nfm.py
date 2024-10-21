@@ -31,11 +31,11 @@ class DataLoaderNFM(DataLoaderBase):
 
         if users_info is not None:
             user_cols = [col for col in users_info.columns
-                             if col not in ['org_id', 'remap_id']]
+                             if col not in ['id', 'remap_id']]
             
             for col in user_cols:
                 feat_rows += list(range(self.n_users))
-                feat_cols += (pd.to_numeric(users_info[col]) + self.n_user_attr).to_list()
+                feat_cols += (users_info[col] + self.n_user_attr).to_list()
                 feat_data += [1] * users_info.shape[0]
                 self.n_user_attr += max(users_info[col]) + 1
 
